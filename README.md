@@ -140,6 +140,29 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
 | `agent` | id of the agents |
 | `mask_inter_res` | If `true`, only the final turn is supervised |
 
+### Run Training
+
+**Stage 1** (single agent):
+```bash
+# Single GPU
+python hylat/train.py --conf hylat/configs/stage1_llama.yaml
+
+# Multi-GPU
+torchrun --nproc_per_node=4 hylat/train.py --conf hylat/configs/stage1_llama.yaml
+```
+
+**Stage 2** (two homogeneous agents):
+```bash
+torchrun --nproc_per_node=4 hylat/train_mas_dual.py --conf hylat/configs/stage2_dual_llama.yaml
+```
+
+**Stage 2** (heterogeneous agents):
+```bash
+torchrun --nproc_per_node=4 hylat/train_mas_dual_hetero.py --conf hylat/configs/stage2_hetero_llama_qwen.yaml
+```
+
+Edit the corresponding config file in `hylat/configs/` to set `model_name_or_path`, `data_name`, and `output_dir` before running.
+
 ---
 
 ## Evaluation
@@ -166,9 +189,9 @@ ROOT_PATH      = "/path/to/eval"   # root directory of this eval folder
 
 ### Run the Evaluation
 
-**prepare the conf**
+**Prepare the evaluation config**
 
-prepare a test_mas.yaml by setting the ckpt_dir to the ckpt of the trained hylat model
+Edit `hylat/configs/test_mas.yaml`: set `ckpt_dir` to your trained Stage 2 checkpoint path and ensure `model_name_or_path`, `num_latent`, `prj_dim` match the training config.
 
 **Run HyLaT agents on the MAD tasks**:
 
