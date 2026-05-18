@@ -67,9 +67,9 @@ Each training sample is a JSON object with a `messages` list. Each message conta
 
 | Field | Description |
 |-------|-------------|
-| `content` | The input question |
-| `short_answer` | Concise answer (content of text channel)  |
-| `long_answer` | Elaborate reasoning or explanations (content of latent channel) |
+| `content` | The input question, only set for "user" msg |
+| `short_answer` | Concise answer (content of text channel), only set for "assistant" msg  |
+| `long_answer` | Elaborate reasoning or explanations (content of latent channel) , only set for "assistant" msg |
 
 #### Stage 2
 
@@ -80,20 +80,17 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
   "messages": [
     {
       "role": "user",
-      "content": "",
       "question_agent1": "Solve: Janet's ducks lay 16 eggs per day...",
       "question_agent2": "Solve: Janet's ducks lay 16 eggs per day...",
     },
     {
       "role": "assistant",
-      "content": "",
       "long_answer": "...",
       "short_answer": "...",
       "agent": 1
     },
     {
       "role": "assistant",
-      "content": "",
       "long_answer": "...",
       "short_answer": "...",
       "agent": 2
@@ -109,7 +106,7 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
 | `question_agent2` | Question seen by Agent 2 (may differ to simulate information asymmetry) |
 | `short_answer` | Concise answer (content of text channel) |
 | `long_answer` | Elaborate reasoning or explanations (content of latent channel) |
-|`agent` | id of the agents |
+| `agent` | id of the agents |
 | `mask_inter_res` | If `true`, only the final turn is supervised |
 
 ---
