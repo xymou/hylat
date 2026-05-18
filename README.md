@@ -18,8 +18,8 @@ The training framework proceeds in two stages:
 
 | Stage | Script | Description |
 |-------|--------|-------------|
-| **Stage 1** | `train/train.py` | Train a single agent to produce hybrid latent+text outputs via self-distillation based on [CODI](https://github.com/zhenyi4/codi/tree/main) |
-| **Stage 2** | `train/train_mas_dual.py` | Train two agents to mutually understand and respond to each other's hybrid outputs (You can also use `train/train_mas_general.py` for more than two agents, or `train/train_mas_dual_hetero.py` for heterogeneous agents) |
+| **Stage 1** | `hylat/train.py` | Train a single agent to produce hybrid latent+text outputs via self-distillation based on [CODI](https://github.com/zhenyi4/codi/tree/main) |
+| **Stage 2** | `hylat/train_mas_dual.py` | Train two agents to mutually understand and respond to each other's hybrid outputs (You can also use `hylat/train_mas_general.py` for more than two agents, or `hylat/train_mas_dual_hetero.py` for heterogeneous agents) |
 
 
 
