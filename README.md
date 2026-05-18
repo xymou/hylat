@@ -10,6 +10,36 @@ This is the official implementation of the paper: **[HyLaT:Efficient Multi-Agent
 - [Train HyLaT](#train-hylat)
 - [Evaluation](#evaluation)
 
+## Repository Structure
+
+```
+hylat/
+├── hylat/                          # Training code
+│   ├── train.py                    # Stage 1 training
+│   ├── train_mas_dual.py           # Stage 2 training (2 homogeneous agents)
+│   ├── train_mas_general.py        # Stage 2 training (N agents)
+│   ├── train_mas_dual_hetero.py    # Stage 2 training (heterogeneous agents)
+│   ├── src/
+│   │   ├── model.py                # Stage 1 model (CODI)
+│   │   ├── model_decoder_mas_dual.py        # Stage 2 dual-agent model (HyLAT)
+│   │   ├── model_decoder_mas_general.py     # Stage 2 N-agent model
+│   │   └── model_decoder_mas_dual_hetero.py # Stage 2 heterogeneous model
+│   └── configs/
+│       ├── stage1_llama.yaml       # Example Stage 1 config
+│       ├── stage2_dual_llama.yaml  # Example Stage 2 config
+│       ├── stage2_hetero_llama_qwen.yaml  # Example Stage 2 hetero config
+│       └── test_mas.yaml           # Evaluation config
+└── eval/                           # Evaluation code (MAD tasks)
+    ├── scripts/
+    │   ├── eval_hylat.sh           # Run HyLaT evaluation
+    │   └── eval_nl.sh              # Run NL baseline
+    └── src/
+        ├── main_latent.py          # Evaluation entry point (HyLaT)
+        ├── main.py                 # Evaluation entry point (baselines)
+        ├── models/agents/          # Agent implementations
+        └── tasks/                  # Task definitions (debate, IA, workflow)
+```
+
 
 
 ## Train HyLaT
@@ -60,7 +90,7 @@ Each training sample is a JSON object with a `messages` list. Each message conta
       "content": "",
       "short_answer": "...",
       "long_answer": "..."
-    },    
+    }  
   ]
 }
 ```
@@ -95,6 +125,7 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
       "short_answer": "...",
       "agent": 2
     },    
+    ...
   ],
   "mask_inter_res": true
 }
@@ -135,7 +166,11 @@ ROOT_PATH      = "/path/to/eval"   # root directory of this eval folder
 
 ### Run the Evaluation
 
-**HyLaT agents** (hybrid latent+text communication):
+**prepare the conf**
+
+prepare a test_mas.yaml by setting the ckpt_dir to the ckpt of the trained hylat model
+
+**Run HyLaT agents on the MAD tasks**:
 
 ```bash
 cd eval
