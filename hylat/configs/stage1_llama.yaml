@@ -1,0 +1,63 @@
+# Stage 1: Single-agent training (train.py)
+# Train a single agent to compress chain-of-thought into hybrid latent+text outputs.
+#
+# Usage:
+#   python train.py --conf configs/stage1_llama.yaml
+#   torchrun --nproc_per_node=4 train.py --conf configs/stage1_llama.yaml
+
+# ── Output ────────────────────────────────────────────────────────────────────
+output_dir: ckpt/stage1/
+logging_dir: ckpt/stage1/logs
+logging_steps: 10
+logging_strategy: "steps"
+save_strategy: "no"
+save_total_limit: 1
+save_safetensors: False
+report_to: none
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+model_name_or_path: meta-llama/Llama-3.2-1B-Instruct  # replace with local path if needed
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+data_name: /path/to/stage1_data/train.json  # each sample: {messages: [{content, short_answer, long_answer}]}
+max_token_num: 4096                          # discard samples exceeding this length
+
+# ── Training ──────────────────────────────────────────────────────────────────
+seed: 42
+model_max_length: 4096
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 4
+bf16: True
+num_train_epochs: 3
+learning_rate: 3e-4
+max_grad_norm: 2.0
+weight_decay: 0.1
+warmup_ratio: 0.03
+lr_scheduler_type: "cosine"
+do_train: True
+
+# ── LoRA ──────────────────────────────────────────────────────────────────────
+use_lora: True
+lora_r: 128
+lora_alpha: 32
+lora_dropout: 0.0
+lora_init: True
+
+# ── Latent & distillation ─────────────────────────────────────────────────────
+num_latent: 6               # number of latent thought tokens
+use_prj: True               # use projection layer on encoder hidden state
+prj_dim: 2048               # projection hidden dim (match model hidden size or set custom)
+prj_dropout: 0.0
+prj_no_ln: False            # set True to disable LayerNorm after projection
+
+distill_loss_type: smooth_l1        # l1 | l2 | smooth_l1
+distill_loss_factor: 20             # weight of distillation loss
+distill_loss_div_std: True          # normalize distillation loss by teacher hidden state std
+ref_loss_factor: 1.0                # weight of teacher CE loss
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+include_last_cot: False     # include the last CoT step in training data
+remove_eos: True
+exp_mode: False             # set True to run a quick experiment on a small subset
+exp_data_num: 200
+print_ref_model_stats: True
