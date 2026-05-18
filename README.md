@@ -1,4 +1,4 @@
-# 💬HyLaT:Efficient Multi-Agent Communication via Hybrid Latent–Text Protocol
+# 💬HyLaT: Efficient Multi-Agent Communication via Hybrid Latent–Text Protocol
 
 This is the official implementation of the paper: **[HyLaT:Efficient Multi-Agent Communication via Hybrid Latent–Text Protocol]** (arXiv link).
 
@@ -27,7 +27,7 @@ The training framework proceeds in two stages:
 
 **Clone the repository**:
 ```bash
-git clone <repo-url>
+git clone https://github.com/xymou/hylat.git
 cd hylat
 ```
 
