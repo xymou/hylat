@@ -103,7 +103,7 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
 | Field | Description |
 |-------|-------------|
 | `question_agent1` | Question seen by Agent 1 |
-| `question_agent2` | Question seen by Agent 2 (may differ to simulate information asymmetry) |
+| `question_agent2` | Question seen by Agent 2 (question_agent1 and question_agent2 can be the same to simulate debating or may differ to simulate information asymmetry) |
 | `short_answer` | Concise answer (content of text channel) |
 | `long_answer` | Elaborate reasoning or explanations (content of latent channel) |
 | `agent` | id of the agents |
