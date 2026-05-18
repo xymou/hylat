@@ -1,0 +1,15 @@
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+transformers==4.44.2
+termcolor
+pandas
+matplotlib
+accelerate==1.2.1
+numpy==1.26.0
+gym
+
+# retrieval
+faiss-cpu==1.11.0
+beir==2.1.0
+elasticsearch==8.15.0
