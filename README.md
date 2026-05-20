@@ -148,18 +148,14 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
 python hylat/train.py --conf hylat/configs/stage1_llama.yaml
 
 # Multi-GPU
-torchrun --nproc_per_node=4 hylat/train.py --conf hylat/configs/stage1_llama.yaml
+torchrun --nproc_per_node=8 hylat/train.py --conf hylat/configs/stage1_llama.yaml
 ```
 
 **Stage 2** (two homogeneous agents):
 ```bash
-torchrun --nproc_per_node=4 hylat/train_mas_dual.py --conf hylat/configs/stage2_dual_llama.yaml
+torchrun --nproc_per_node=8 hylat/train_mas_dual.py --conf hylat/configs/stage2_dual_llama.yaml
 ```
 
-**Stage 2** (heterogeneous agents):
-```bash
-torchrun --nproc_per_node=4 hylat/train_mas_dual_hetero.py --conf hylat/configs/stage2_hetero_llama_qwen.yaml
-```
 
 Edit the corresponding config file in `hylat/configs/` to set `model_name_or_path`, `data_name`, and `output_dir` before running.
 
@@ -208,7 +204,7 @@ This calls `src/main_latent.py` with `--method latent_stage2` and iterates over 
 | `--model_name_or_path` | Path to the base LLM |
 | `--conf_path` | Path to the HyLaT test config (set the ckpt path in the yaml) |
 | `--dataset` | Dataset name|
-| `--method` | Agent communication method (see list below) |
+| `--method` | Agent communication method|
 | `--output_dir` | Directory to save results |
 | `--temperature` | Sampling temperature|
 
