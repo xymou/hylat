@@ -214,7 +214,7 @@ For setting more MAD methods or datasets, plz refer to [SDE](https://github.com/
 
 ## Citation
 
-If you use this code in your research, please cite:
+If you find this repo helpful, please cite:
 
 ```bibtex
 @article{xxx2025hylat,
