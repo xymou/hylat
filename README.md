@@ -58,7 +58,7 @@ The training framework proceeds in two stages:
 **Clone the repository**:
 ```bash
 git clone https://github.com/xymou/hylat.git
-cd hylat
+cd hylat/hylat
 ```
 
 **Create environment**:
