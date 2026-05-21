@@ -63,7 +63,7 @@ cd hylat/hylat
 
 **Create environment**:
 ```bash
-conda create -n hylat python=3.10.12
+conda create -n hylat python=3.12.12
 conda activate hylat
 pip install -r requirements.txt
 ```
@@ -167,7 +167,7 @@ Install the evaluation dependencies (separate from training):
 
 ```bash
 cd eval
-conda create -n SDE python=3.10.12
+conda create -n SDE python=3.10.16
 conda activate SDE
 pip install -r requirements.txt
 ```
