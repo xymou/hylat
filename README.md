@@ -144,20 +144,16 @@ Each sample is a multi-turn dialogue between two agents (it can also be extended
 
 **Stage 1** (single agent):
 ```bash
-# Single GPU
-python hylat/train.py --conf hylat/configs/stage1_llama.yaml
-
-# Multi-GPU
-torchrun --nproc_per_node=8 hylat/train.py --conf hylat/configs/stage1_llama.yaml
+torchrun --nproc_per_node=8 train.py --conf ./configs/stage1_llama.yaml
 ```
 
 **Stage 2** (two homogeneous agents):
 ```bash
-torchrun --nproc_per_node=8 hylat/train_mas_dual.py --conf hylat/configs/stage2_dual_llama.yaml
+torchrun --nproc_per_node=8 train_mas_dual.py --conf ./configs/stage2_dual_llama.yaml
 ```
 
 
-Edit the corresponding config file in `hylat/configs/` to set `model_name_or_path`, `data_name`, and `output_dir` before running.
+Edit the corresponding config file in `./configs/` to set `model_name_or_path`, `data_name`, `output_dir` and etc before running.
 
 ---
 

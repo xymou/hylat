@@ -1,13 +1,6 @@
-# Stage 2: Dual-agent training with homogeneous models (train_decoder_mas_dual.py)
-# Two agents (same backbone) take turns reasoning; each conditions on the other's
-# hybrid latent+text output from the previous turn.
-#
-# Usage:
-#   python train_decoder_mas_dual.py --conf configs/stage2_dual_llama.yaml
-#   torchrun --nproc_per_node=4 train_decoder_mas_dual.py --conf configs/stage2_dual_llama.yaml
-
 # ── Output ────────────────────────────────────────────────────────────────────
 output_dir: ckpt/stage2_dual/
+expt_name: stage2_llama
 logging_dir: ckpt/stage2_dual/logs
 logging_steps: 10
 logging_strategy: "steps"

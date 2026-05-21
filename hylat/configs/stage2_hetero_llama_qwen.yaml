@@ -1,13 +1,6 @@
-# Stage 2: Dual-agent training with heterogeneous models (train_decoder_mas_dual_hetero.py)
-# Agent 1 (Llama) and Agent 2 (Qwen) communicate via learned bidirectional adapters
-# that project latents between the two hidden spaces.
-#
-# Usage:
-#   python train_decoder_mas_dual_hetero.py --conf configs/stage2_hetero_llama_qwen.yaml
-#   torchrun --nproc_per_node=4 train_decoder_mas_dual_hetero.py --conf configs/stage2_hetero_llama_qwen.yaml
-
 # ── Output ────────────────────────────────────────────────────────────────────
 output_dir: ckpt/stage2_hetero/
+expt_name: stage2_hetero
 logging_dir: ckpt/stage2_hetero/logs
 logging_steps: 10
 logging_strategy: "steps"

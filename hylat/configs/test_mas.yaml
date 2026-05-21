@@ -1,17 +1,6 @@
-# Evaluation config for HyLaT Stage 2 agents.
-# Used by eval/src/main_latent.py via --conf_path.
-#
-# Usage (run from the eval/ directory):
-#   python -m src.main_latent \
-#       --config_file configs/debate.json \
-#       --model_name_or_path /path/to/Llama-3.2-1B-Instruct \
-#       --dataset commonsense \
-#       --method latent_stage2 \
-#       --conf_path ../hylat/configs/test_mas.yaml \
-#       --output_dir output
-
 # ── Checkpoint ────────────────────────────────────────────────────────────────
 ckpt_dir: /path/to/stage2_checkpoint/   # path to the trained Stage 2 checkpoint
+output_dir: ""
 
 # ── Model ─────────────────────────────────────────────────────────────────────
 model_name_or_path: meta-llama/Llama-3.2-1B-Instruct  # base LLM (same as training)

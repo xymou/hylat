@@ -22,7 +22,7 @@ from src.data import (
 
 from src.models.agents import NlAgent, CipherAgent, SDEAgent, LatentStage2Agent, PureLatentAgent
 from src.root_path import ROOT_PATH, DATA_ROOT_PATH
-from src.utils import load_model, load_only_generation_config, load_latent_model, count_cipher, count_token, generate_directed_topology, count_trust_game
+from src.utils import load_model, load_only_generation_config, load_latent_model, count_cipher, count_token
 from src.tasks import method_to_task_cls, update_hidden_dim
 
 

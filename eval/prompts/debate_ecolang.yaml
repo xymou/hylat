@@ -1,0 +1,192 @@
+commonsense:
+  first_prompt: |
+    Can you answer the following question as accurately as possible?
+    {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the reasoning from other agents as additional advice, can you give an updated answer? 
+    Examine your solution and that other agents step by step.
+    The origin question is {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+  
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}```
+
+
+socialiqa:
+  first_prompt: |
+    Can you answer the following question as accurately as possible?
+    {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the reasoning from other agents as additional advice, can you give an updated answer? 
+    Examine your solution and that other agents step by step.
+    The origin question is {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+  
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}```  
+
+
+
+strategy:
+  first_prompt: | 
+    Can you answer the question? {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Explain your reasoning. Your final answer should be True or False, in the form \\boxed{{answer}}, at the end of your response.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the solutions from other agents as additional information, can you provide your answer?
+    The original question is {question}. 
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Your final answer should be True or False, in the form \\boxed{{answer}}, at the end of your response.
+
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}```
+
+
+worldtree:
+  first_prompt: |
+    Can you answer the following question as accurately as possible?
+    {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the reasoning from other agents as additional advice, can you give an updated answer? 
+    Examine your solution and that other agents step by step.
+    The origin question is {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+  
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}``` 
+
+
+
+pubmed:
+  first_prompt: |
+    Can you answer the following question as accurately as possible?
+    {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the reasoning from other agents as additional advice, can you give an updated answer? 
+    Examine your solution and that other agents step by step.
+    The origin question is {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+  
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}``` 
+
+
+medqa:
+  first_prompt: |
+    Can you answer the following question as accurately as possible?
+    {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the reasoning from other agents as additional advice, can you give an updated answer? 
+    Examine your solution and that other agents step by step.
+    The origin question is {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}```
+
+
+arc:
+  first_prompt: |
+    Can you answer the following question as accurately as possible?
+    {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  debate_prompt: |
+    These are the solutions to the problem from other agents: 
+    {all_other_response}
+    
+    Using the reasoning from other agents as additional advice, can you give an updated answer? 
+    Examine your solution and that other agents step by step.
+    The origin question is {question}
+
+    [FORMAT REQUIREMENTS THAT YOU MUST FOLLOW]
+    Eliminate redundancy, cut filler, and be concise.
+    Briefly explain your answer, and write your final choice on a new line.
+    The final choice must be enclosed in parentheses, for example ```The answer is (A)```.
+
+  other_response_prompt: |
+    One agent solution: 
+    ```{other_response}```
