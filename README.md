@@ -1,6 +1,6 @@
-# 💬HyLaT: Efficient Multi-Agent Communication via Hybrid Latent–Text Protocol
+# 💬HyLaT: Efficient Multi-Agent Communication via Hybrid Latent-Text Protocol
 
-This is the official implementation of the paper: **[HyLaT:Efficient Multi-Agent Communication via Hybrid Latent–Text Protocol]** (arXiv link).
+This is the official implementation of the paper: [HyLaT:Efficient Multi-Agent Communication via Hybrid Latent-Text Protocol](https://arxiv.org/pdf/2605.25421).
 
 ## Overview
 
