@@ -20,7 +20,7 @@ hylat/
 │   ├── train_mas_general.py        # Stage 2 training (N agents)
 │   ├── train_mas_dual_hetero.py    # Stage 2 training (heterogeneous agents)
 │   ├── src/
-│   │   ├── model.py                # Stage 1 model (CODI)
+│   │   ├── model.py                # Stage 1 model
 │   │   ├── model_decoder_mas_dual.py        # Stage 2 dual-agent model (HyLAT)
 │   │   ├── model_decoder_mas_general.py     # Stage 2 N-agent model
 │   │   └── model_decoder_mas_dual_hetero.py # Stage 2 heterogeneous model
@@ -213,11 +213,11 @@ For setting more MAD methods or datasets, plz refer to [SDE](https://github.com/
 If you find this repo helpful, please cite:
 
 ```bibtex
-@article{xxx2025hylat,
-  title   = {[Paper Title]},
-  author  = {[Authors]},
-  year    = {2025},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX}
+@article{mou2026hylat,
+  title   = {HyLaT: Efficient Multi-Agent Communication via Hybrid Latent-Text Protocol},
+  author  = {Xinyi Mou and Siyuan Wang and Zejun Li and Yulan He and Zhongyu Wei},
+  year    = {2026},
+  journal = {arXiv preprint arXiv:2605.25421}
 }
 ```
 
